@@ -5,18 +5,17 @@ Before beginning with our coding and analysis of the coding, let us first discus
 
 Link of dataset: https://archive.ics.uci.edu/ml/datasets/Statlog+%28Shuttle%29
 
-NUMBER OF ATTRIBUTES
-	9
+NUMBER OF ATTRIBUTES : 9
 
 In the dataset there are 9 attributes and class 1 variables and all the data are numeric in nature. The last column is the class which has been 
 coded as follows :
-        1       Rad Flow
-        2       Fpv Close
-        3       Fpv Open
-        4       High
-        5       Bypass
-        6       Bpv Close
-        7       Bpv Open
+        1. Rad Flow
+        2. Fpv Close
+        3. Fpv Open
+        4. High
+        5. Bypass
+        6. Bpv Close
+        7. Bpv Open
         
 Approximately 80% of the data belongs to class 1.
 
