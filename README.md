@@ -1,5 +1,5 @@
-# CA1-12000246
-This is the code for Nirvan Gurung, for the purpose of CA1.
+# CA2-12000246
+This is the code for Nirvan Gurung, for the purpose of CA2.
 
 Before beginning with our coding and analysis of the coding, let us first discuss a bit about the dataset used in this report. The dataset for my report is that of Statlog (Shuttle). According to the description, this dataset should only be tackled by train/test, both the train file as well as test file is available in the link given below.
 
