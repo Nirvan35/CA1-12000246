@@ -25,5 +25,4 @@ We will be using mainly two types of data in this report, one is shuttle.trn (tr
 2.	Choosing a model
 3.	Training for optimization
 4.	Evaluating (highest accuracy with confusion matrix)
-5.	Hyperparameter tuning
-6.	Prediction on unknown data.
+5.	Prediction on unknown data.
