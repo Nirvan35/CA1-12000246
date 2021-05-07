@@ -19,11 +19,11 @@ testing_data = pd.read_csv("shuttle_test.csv", delimiter = ' ', names = col_name
 
 # Check training data for missing values-
 training_data.isnull().values.any()
-# False
+## False
 
 # Check testing data for missing values-
 testing_data.isnull().values.any()
-#False
+## False
 
 from sklearn.model_selection import train_test_split
 td_class_6 = training_data.Class == 6
@@ -60,6 +60,9 @@ from sklearn.metrics import accuracy_score
 print('Training performance=',accuracy_score(pred_train,y_train))
 print('Testing performance=',accuracy_score(pred_test,y_test))
 
+## Training performance= 0.9436689111512564
+## Testing performance= 0.9400720361713542
+
 #2.2) Logistic regression
 from sklearn.linear_model import LogisticRegression
 model_lr = LogisticRegression()
@@ -69,6 +72,9 @@ pred_test2 = model_lr.predict(x_test_std)
 from sklearn.metrics import accuracy_score
 print('Training performance=',accuracy_score(pred_train2,y_train))
 print('Testing performance=',accuracy_score(pred_test2,y_test))
+
+## Training performance= 0.9676137296764658
+## Testing performance= 0.9659744041689018
 
 #2.3) Decision Tree Classifier
 from sklearn.tree import DecisionTreeClassifier
@@ -80,6 +86,9 @@ from sklearn.metrics import accuracy_score
 print('Training performance=',accuracy_score(pred_train3,y_train))
 print('Testing performance=',accuracy_score(pred_test3,y_test))
 
+## Training performance= 1.0
+## Testing performance= 0.9995401946509311
+
 #2.4) SVC
 from sklearn.svm import SVC
 model_svc = SVC()
@@ -90,6 +99,9 @@ from sklearn.metrics import accuracy_score
 print('Training performance=',accuracy_score(pred_train4,y_train))
 print('Testing performance=',accuracy_score(pred_test4,y_test))
 
+## Training performance= 0.9982591558548202
+## Testing performance= 0.9977776074795004
+
 """We will use **Decision Tree Classifier** since it has the highest accuracy score for both *training and testing* for preparing **Confusion Matrix.** 
 So, we will be using the variable **pred_test3** and **model_DT**.
 """
@@ -99,8 +111,17 @@ from sklearn.metrics import confusion_matrix
 matrix = confusion_matrix(pred_test3,y_test)
 print(matrix)
 
+[[10191     0     0     0     0     0]
+ [    1    11     0     0     0     0]
+ [    0     0    43     0     0     0]
+ [    3     0     2  2065     0     0]
+ [    0     0     0     0   731     0]
+ [    0     0     0     0     0     2]]
+
 from sklearn.metrics import plot_confusion_matrix
 plot_confusion_matrix(model_DT,x_test_std,y_test)
+
+## for confusion matrix plot, refer to coding on Google Colab ##
 
 #4) Prediction on unknown data
 
@@ -110,8 +131,12 @@ model_DTR = DecisionTreeRegressor(max_depth=5).fit(x_train,y_train)
 DT_predict = model_DTR.predict(x_test) #Predictions on Testing data
 print(DT_predict)
 
+## [1.0020645 4.        1.0020645 ... 1.0020645 1.0020645 1.       ]
+
 #4.2) Using Predict() function with KNN
 from sklearn.neighbors import KNeighborsRegressor
 KNN_model = KNeighborsRegressor(n_neighbors=3).fit(x_train,y_train)
+
+## [1. 4. 1. ... 1. 1. 1.]
 KNN_predict = KNN_model.predict(x_test) #Predictions on Testing data
 print(KNN_predict)
